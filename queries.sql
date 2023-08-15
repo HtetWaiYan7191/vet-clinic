@@ -54,3 +54,25 @@ SELECT animals.name AS animal_name FROM animals JOIN owners ON animals.owner_id 
 SELECT animals.name AS animal_name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Dean Winchester' AND animal.escape_attemp = 0;
 SELECT owners.full_name AS name , COUNT(animals.id) AS total_animals FROM owners JOIN animals ON owners.id = animals.owner_id GROUP BY owners.full_name ORDER BY total_animals DESC LIMIT 1;
 
+
+
+SELECT a.name FROM animals a JOIN visits v ON a.id = v.animal_id JOIN vets vt ON v.vet_id = vt.id WHERE vt.name = 'William Tatcher' ORDER BY v.visit_date DESC LIMIT 1;
+
+SELECT COUNT(DISTINCT a.id) FROM animals a JOIN visits v ON a.id = v.animal_id JOIN vets vt ON v.vet_id = vt.id WHERE vt.name = 'Stephanie Mendez';
+
+SELECT vt.name AS vet_name , s.name AS speciality FROM vets vt LEFT JOIN specializations sp ON vt.id = sp.vet_id  LEFT JOIN species s ON sp.species_id = s.id ORDER BY vt.name;
+
+SELECT a.name FROM animals a JOIN visits v ON a.id = v.animal_id JOIN vets vt ON v.vet_id = vt.id WHERE vt.name = 'Stephanie Mendez' AND vt.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT a.name FROM animals a JOIN visits v ON a.id = v.animal_id GROUP BY a.name ORDER BY COUNT(a.id) DESC LIMIT 1;
+
+SELECT a.name FROM animals a JOIN visits v ON a.id = v.animal_id JOIN vets vt ON v.vet_id = vt.id WHERE vt.name = 'Maisy Smith' ORDER BY v.visit_date ASC LIMIT 1;
+
+SELECT a.name AS animal_name, vt.name AS vet_info , v.visit_date AS visit_date FROM animals a JOIN visits v ON  a.id = v.animal_id JOIN vets vt ON v.vet_id = vt.id ORDER BY v.visit_date DESC LIMIT 1;
+
+SELECT COUNT(*) FROM visits v JOIN animals a ON v.animal_id = a.id JOIN vets vt ON v.vet_id = vt.id LEFT JOIN specializations sp ON vt.id = sp.vet_id AND a.species_id = sp.species_id WHERE sp.vet_id IS NULL;
+
+SELECT s.name AS Maisy_speciality FROM species JOIN animals a ON s.id = a.species_id JOIN visits v ON a.id = v.animal_id JOIN vets vt ON v.vet_id = vt.id WHERE vt.name = 'Maisy Smith' GROUP BY s.name ORDER BY COUNT(v.visit_date) DESC LIMIT 1;
+
+
+
