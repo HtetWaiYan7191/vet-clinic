@@ -53,6 +53,8 @@ ALER TABLE owners ADD COLUMN email VARCHAR(120);
 
 -- create index to improve performance 
 CREATE INDEX visits_animal_id_inx ON visits(animal_id);
+
 CREATE INDEX visits_vet_id_inx ON visits(vet_id);
+
 CREATE INDEX owners_email_inx ON owners(email);
 
