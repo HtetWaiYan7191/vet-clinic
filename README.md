@@ -73,11 +73,17 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="author"></a>
+## 👥 Author1 <a name="author"></a>
 
 👤 Htet Wai Yan
 
 - GitHub: [@HtetWaiYan7191](https://github.com/HtetWaiYan7191)
+
+👤 **Munana Clinton**
+
+- GitHub: [@githubhandle](https://github.com/clin2on3mun)
+- Twitter: [@twitterhandle](https://twitter.com/ClintonMunana)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/munana-clinton/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
